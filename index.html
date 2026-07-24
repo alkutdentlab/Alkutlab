@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مختبر الكوت لصناعة الأسنان</title>
+    <style>
+        :root {
+            --primary-color: #0d9488; /* يمكنك تغيير اللون ليناسب شعارك */
+            --dark-color: #1f2937;
+            --light-bg: #f9fafb;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            text-align: center;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo {
+            max-width: 180px;
+            height: auto;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 { color: var(--primary-color); }
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .btn {
+            display: block;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .whatsapp { background-color: #25D366; }
+        .facebook { background-color: #1877F2; }
+        .instagram { background-color: #E4405F; }
+        .map-frame {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <!-- ضع اسم ملف الشعار الخاص بك هنا -->
+        <img src="logo.png" alt="شعار المختبر" class="logo">
+    </header>
+
+    <div class="container">
+        <h1>مختبر الأسنان الرقمي</h1>
+        <p>نقدم أحدث التقنيات الرقمية والتركيبات عالية الدقة لخدمة عيادات الأسنان.</p>
+
+        <div class="btn-container">
+            <a href="https://wa.me/YOUR_PHONE_NUMBER" class="btn whatsapp" target="_blank">تواصل معنا عبر واتساب</a>
+            <a href="YOUR_FACEBOOK_LINK" class="btn facebook" target="_blank">صفحتنا على فيسبوك</a>
+            <a href="YOUR_INSTAGRAM_LINK" class="btn instagram" target="_blank">حسابنا على إنستغرام</a>
+        </div>
+
+        <h2>موقعنا على الخريطة</h2>
+        <!-- يمكنك استبدال رابط الخريطة برابط موقعك الدقيق من Google Maps -->
+        <iframe class="map-frame" src="https://maps.google.com/maps?q=Kut,Iraq&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+
+</body>
+</html>
