@@ -4,232 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مختبر الكوت لصناعة الأسنان</title>
-    
     <!-- رابط Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-        /* إعدادات المتصفح الأساسية */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            color: #444;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .main-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-
-        .content-wrapper {
-            padding: 0 20px;
-        }
-
-        /* قسم الهيدر */
-        .hero-section {
-            background-size: cover;
-            background-position: center;
-            padding: 20px 0 60px 0;
-            text-align: right;
-        }
-
-        .main-logo {
-            max-width: 180px;
-            height: auto;
-            margin-bottom: 30px;
-        }
-
-        .main-title {
-            font-size: 38px;
-            font-weight: bold;
-            color: #27ABB0; /* الأزرق السماوي للشعار */
-            margin-bottom: 20px;
-        }
-
-        .main-title .highlight {
-            color: #D6A537; /* الذهبي للشعار */
-        }
-
-        .intro-text p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 15px;
-            max-width: 550px;
-        }
-
-        /* قسم تواصلوا معنا */
-        .contact-prompt {
-            margin-top: -30px;
-            margin-bottom: 40px;
-        }
-
-        .prompt-box {
-            background-color: #fff;
-            border: 2px solid #eaeaea;
-            border-radius: 15px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-        }
-
-        .prompt-icon {
-            font-size: 40px;
-            color: #27ABB0;
-        }
-
-        .prompt-text h3 {
-            font-size: 18px;
-            color: #D6A537;
-            margin-bottom: 5px;
-        }
-
-        .prompt-text p {
-            font-size: 14px;
-            color: #666;
-        }
-
-        /* قسم الميزات */
-        .features-section {
-            margin-bottom: 50px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            text-align: center;
-        }
-
-        .feature-item i {
-            font-size: 36px;
-            color: #27ABB0;
-            margin-bottom: 10px;
-        }
-
-        .feature-item h4 {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .feature-item p {
-            font-size: 12px;
-            color: #888;
-        }
-
-        /* أزرار التواصل */
-        .social-links-section {
-            margin-bottom: 40px;
-        }
-
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .social-btn {
-            display: flex;
-            align-items: center;
-            padding: 16px 25px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .social-btn .start-icon {
-            font-size: 24px;
-            margin-left: 20px;
-        }
-
-        .social-btn span {
-            flex-grow: 1;
-            text-align: center;
-        }
-
-        .social-btn .end-icon {
-            font-size: 18px;
-        }
-
-        /* ألوان الأزرار */
-        .social-btn.facebook { background-color: #1877F2; }
-        .social-btn.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
-        .social-btn.whatsapp { background-color: #25D366; }
-        .social-btn.location { background-color: #27ABB0; }
-
-        /* الفوتر */
-        .main-footer {
-            background-color: #1e293b;
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        .footer-logo {
-            max-width: 120px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .partner-text {
-            font-size: 16px;
-            font-weight: bold;
-            color: #D6A537;
-            margin-bottom: 10px;
-        }
-
-        .copyright {
-            font-size: 12px;
-            opacity: 0.7;
-        }
-
-        /* تجاوب الهاتف */
-        @media (max-width: 768px) {
-            .main-title { font-size: 30px; }
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .prompt-box { flex-direction: column; text-align: center; }
-        }
-    </style>
+    <!-- رابط ملف التنسيق -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="main-container">
-        <!-- قسم الهيدر -->
-        <header class="hero-section">
+        <!-- قسم الهيدر والبطل -->
+        <header class="hero-section" style="background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.9) 100%), url('images/hero-lab.jpg');">
             <div class="content-wrapper">
-                <img src="logo.png" alt="شعار مختبر الكوت" class="main-logo">
+                <img src="images/logo.png" alt="شعار مختبر الكوت" class="main-logo">
                 <h1 class="main-title">نحو <span class="highlight">ابتسامة</span> مثالية.</h1>
                 <div class="intro-text">
                     <p>في مختبرنا، نحول خطط طبيب الأسنان إلى تركيبات سنية دقيقة باستخدام أحدث الأجهزة والمواد العالمية.</p>
-                    <p>نلتزم بتقديم حلول تجمع بين الدقة، والمتانة، والمظهر الطبيعي، مع سرعة الإنجاز وجودة يمكن الوثوق بها.</p>
+                    <p>نلتزم بتقديم حلول تجمع بين الدقة والمتانة والمظهر الطبيعي، مع سرعة الإنجاز وجودة يمكن الوثوق بها.</p>
                 </div>
             </div>
         </header>
 
-        <!-- قسم تواصلوا معنا -->
+        <!-- قسم تواصلوا معنا (المربع الأبيض) -->
         <section class="contact-prompt">
             <div class="content-wrapper">
                 <div class="prompt-box">
@@ -238,7 +33,7 @@
                     </div>
                     <div class="prompt-text">
                         <h3>تواصلوا معنا عبر منصات التواصل الاجتماعي</h3>
-                        <p>ل للحصول على استشاراتكم والإجابة عن جميع استفساراتكم.</p>
+                        <p>للحصول على استشاراتكم والإجابة عن جميع استفساراتكم.</p>
                     </div>
                 </div>
             </div>
@@ -254,17 +49,17 @@
                         <p>التزام بالوقت دون التأثير على الجودة</p>
                     </div>
                     <div class="feature-item">
-                        <i class="far fa-smile"></i>
+                        <i class="far fa-user-circle"></i> <!-- أيقونة تقريبية للمظهر الطبيعي -->
                         <h4>مظهر طبيعي</h4>
                         <p>تركيبات تشبه الأسنان الطبيعية بدقة</p>
                     </div>
                     <div class="feature-item">
-                        <i class="far fa-check-circle"></i>
+                        <i class="far fa-check-square"></i>
                         <h4>متانة وجودة</h4>
                         <p>مواد عالمية تضمن الصلابة والاستدامة</p>
                     </div>
                     <div class="feature-item">
-                        <i class="fas fa-bullseye"></i>
+                        <i class="far fa-dot-circle"></i> <!-- أيقونة تقريبية للدقة -->
                         <h4>دقة عالية</h4>
                         <p>أعلى معايير الدقة في كل تفصيلة</p>
                     </div>
@@ -276,20 +71,24 @@
         <section class="social-links-section">
             <div class="content-wrapper">
                 <div class="links-container">
-                    <!-- استبدل الروابط بالحسابات الحقيقية -->
-                    <a href="YOUR_FACEBOOK_LINK" class="social-btn facebook" target="_blank">
+                    <a href="#" class="social-btn facebook">
                         <i class="fab fa-facebook-f start-icon"></i>
                         <span>فيسبوك</span>
                         <i class="fas fa-chevron-left end-icon"></i>
                     </a>
-                    <a href="YOUR_INSTAGRAM_LINK" class="social-btn instagram" target="_blank">
+                    <a href="#" class="social-btn instagram">
                         <i class="fab fa-instagram start-icon"></i>
                         <span>إنستغرام</span>
                         <i class="fas fa-chevron-left end-icon"></i>
                     </a>
-                    <a href="https://wa.me/YOUR_PHONE_NUMBER" class="social-btn whatsapp" target="_blank">
+                    <a href="#" class="social-btn whatsapp">
                         <i class="fab fa-whatsapp start-icon"></i>
                         <span>واتساب</span>
+                        <i class="fas fa-chevron-left end-icon"></i>
+                    </a>
+                    <a href="#" class="social-btn location">
+                        <i class="fas fa-map-marker-alt start-icon"></i>
+                        <span>العنوان</span>
                         <i class="fas fa-chevron-left end-icon"></i>
                     </a>
                 </div>
@@ -299,9 +98,16 @@
         <!-- الفوتر -->
         <footer class="main-footer">
             <div class="content-wrapper">
-                <img src="logo.png" alt="شعار مختبر الكوت" class="footer-logo">
-                <p class="partner-text">شريككم في صناعة الابتسامة.</p>
-                <p class="copyright">© مختبر الكوت لصناعة الأسنان. جميع الحقوق محفوظة.</p>
+                <div class="footer-content">
+                    <img src="images/logo.png" alt="شعار مختبر الكوت" class="footer-logo">
+                    <div class="footer-center">
+                        <p class="partner-text">شريككم في صناعة الابتسامة.</p>
+                        <p class="copyright">© مختبر الكوت لصناعة الأسنان. جميع الحقوق محفوظة.</p>
+                    </div>
+                    <!-- يمكنك وضع صورة الضرسين هنا -->
+                    <!-- <img src="images/molars-footer.png" alt="molars" class="footer-molars"> -->
+                    <div class="footer-spacer"></div> <!-- بديل إذا لم تكن هناك صورة -->
+                </div>
             </div>
         </footer>
     </div>
