@@ -30,7 +30,6 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            /* تطبيق خط Cairo و Tajawal العربي و Inter للإنجليزي */
             font-family: 'Cairo', 'Tajawal', 'Inter', system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
@@ -48,23 +47,39 @@
             padding: 0 15px;
         }
 
-        /* 1. الهيدر والبطل (Hero Section) */
+        /* 1. الهيدر والبطل (Hero Section مع صورة خلفية) */
         header {
             background: var(--white);
             border-bottom: 3px solid var(--gold);
-            padding: 35px 20px;
             border-radius: 0 0 var(--border-radius) var(--border-radius);
             box-shadow: var(--shadow);
             text-align: center;
             margin-bottom: 30px;
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .header-content {
+            padding: 20px 20px 35px 20px;
+            position: relative;
+            margin-top: -60px;
         }
 
         .logo {
-            width: 220px;
+            width: 180px;
             height: auto;
+            background: var(--white);
+            padding: 10px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             margin-bottom: 15px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.03));
         }
 
         h1 {
@@ -161,48 +176,77 @@
             font-weight: 800;
         }
 
-        /* 4. كروت الخدمات والتقنيات */
+        /* 4. كروت الخدمات مع الصور */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
         }
 
         .service-box {
-            background: var(--teal-light);
+            background: var(--white);
             border: 1px solid rgba(39, 171, 176, 0.2);
             border-radius: 16px;
-            padding: 20px;
+            overflow: hidden;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
         .service-box:hover {
-            transform: translateY(-4px);
-            background: var(--white);
+            transform: translateY(-5px);
             border-color: var(--gold);
-            box-shadow: 0 10px 20px rgba(214, 165, 55, 0.12);
+            box-shadow: 0 12px 25px rgba(214, 165, 55, 0.15);
         }
 
-        .service-box i {
-            font-size: 1.8rem;
-            color: var(--teal);
-            margin-bottom: 10px;
+        .service-img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+        }
+
+        .service-details {
+            padding: 15px;
         }
 
         .service-box h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--dark-text);
             margin-bottom: 6px;
             font-weight: 700;
         }
 
         .service-box p {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: #64748b;
             font-weight: 600;
         }
 
-        /* 5. نموذج إرسال حالة سريرية (Quick Order Form) */
+        /* 5. معرض أعمال مصغر (Visual Gallery) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            height: 140px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* 6. نموذج إرسال حالة سريرية (Quick Order Form) */
         .form-group {
             margin-bottom: 15px;
         }
@@ -237,7 +281,7 @@
             gap: 15px;
         }
 
-        /* 6. أزرار التواصل المباشر */
+        /* 7. أزرار التواصل المباشر */
         .btn-stack {
             display: flex;
             flex-direction: column;
@@ -280,7 +324,7 @@
         }
         .btn-submit:hover { background: #c2932e; }
 
-        /* 7. الفوتر */
+        /* الفوتر */
         footer {
             text-align: center;
             padding: 20px;
@@ -291,6 +335,7 @@
 
         @media (max-width: 600px) {
             .form-row { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
             .section-card { padding: 20px 15px; }
             h1 { font-size: 1.7rem; }
         }
@@ -298,9 +343,11 @@
 </head>
 <body>
 
-    <!-- الهيدر واللوجو -->
+    <!-- الهيدر واللوجو مع صورة بانر خلفية -->
     <header>
-        <div class="container">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80" alt="Dental Lab Banner" class="hero-banner">
+        
+        <div class="header-content">
             <img src="logo.png" alt="مختبر الكوت لصناعة الأسنان" class="logo">
             <h1>مختبر الكوت</h1>
             <div class="subtitle">لصناعة الأسنان الرقمية والتركيبات الحديثة</div>
@@ -328,32 +375,64 @@
             </div>
         </div>
 
-        <!-- قسم الخدمات والحلول الرقمية -->
+        <!-- قسم الخدمات المصورة -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-tooth"></i>
-                <h2>خدماتنا وتخصصات المختبر</h2>
+                <h2>خدماتنا وتقنياتنا المصورة</h2>
             </div>
             <div class="services-grid">
+                
                 <div class="service-box">
-                    <i class="fa-solid fa-gem"></i>
-                    <h3>تيجان الزيركون (Zirconia)</h3>
-                    <p>صلابة استثنائية مع شفافية عالية تشبه الأسنان الطبيعية.</p>
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=500&q=80" alt="Zirconia" class="service-img">
+                    <div class="service-details">
+                        <h3>تيجان الزيركون (Zirconia)</h3>
+                        <p>صلابة استثنائية مع شفافية عالية تشبه الأسنان الطبيعية.</p>
+                    </div>
                 </div>
+
                 <div class="service-box">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <h3>E-Max & Veneers</h3>
-                    <p>عدسات وتيجان عالية الجمال لابتسامة هوليود الجذابة.</p>
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=500&q=80" alt="E-Max" class="service-img">
+                    <div class="service-details">
+                        <h3>E-Max & Veneers</h3>
+                        <p>عدسات وتيجان عالية الجمال لابتسامة هوليود الجذابة.</p>
+                    </div>
                 </div>
+
                 <div class="service-box">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <h3>تركيبات الزرعات (Implants)</h3>
-                    <p>جسور ودعامات مخصصة لجميع أنواع أنظمة الزراعة.</p>
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" alt="Implants" class="service-img">
+                    <div class="service-details">
+                        <h3>تركيبات الزرعات (Implants)</h3>
+                        <p>جسور ودعامات مخصصة لجميع أنواع أنظمة الزراعة.</p>
+                    </div>
                 </div>
+
                 <div class="service-box">
-                    <i class="fa-solid fa-print"></i>
-                    <h3>الطباعة ثلاثية الأبعاد (3D)</h3>
-                    <p>نماذج وتطبيقات تقويمية وسواقط بدقة متناهية.</p>
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="3D Printing" class="service-img">
+                    <div class="service-details">
+                        <h3>الطباعة ثلاثية الأبعاد (3D)</h3>
+                        <p>نماذج وتطبيقات تقويمية وسواقط بدقة متناهية.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- قسم معرض الصور السريع -->
+        <div class="section-card">
+            <div class="section-header">
+                <i class="fa-solid fa-images"></i>
+                <h2>جودة التصنيع والتشطيب النهائي</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=500&q=80" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500&q=80" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=500&q=80" alt="Gallery Image 3">
                 </div>
             </div>
         </div>
