@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مختبر الكوت لصناعة الأسنان الرقمية</title>
 
-    <!-- استدعاء خطوط Google الرسمية: Cairo للعربي و Inter للإنجليزي -->
+    <!-- استدعاء خطوط Google الرسمية -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
             padding: 0 15px;
         }
 
-        /* 1. الهيدر والبطل (Hero Section مع صورة خلفية للمختبر) */
+        /* 1. الهيدر والبانر الرئيسي */
         header {
             background: var(--white);
             border-bottom: 3px solid var(--gold);
@@ -61,9 +61,9 @@
 
         .hero-banner {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-            opacity: 0.85;
+            filter: brightness(0.9);
         }
 
         .header-content {
@@ -104,7 +104,7 @@
             font-weight: 600;
         }
 
-        /* 2. شريط الإحصائيات (Stats Bar) */
+        /* 2. شريط الإحصائيات */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -143,7 +143,7 @@
             font-weight: 700;
         }
 
-        /* 3. أقسام المحتوى (Sections Styling) */
+        /* 3. أقسام المحتوى */
         .section-card {
             background: var(--white);
             border-radius: var(--border-radius);
@@ -176,10 +176,10 @@
             font-weight: 800;
         }
 
-        /* 4. كروت الخدمات المصورة تخصيص كامل */
+        /* 4. كروت الخدمات مع الصور الجديدة المباشرة */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 18px;
         }
 
@@ -200,8 +200,9 @@
 
         .service-img {
             width: 100%;
-            height: 150px;
+            height: 160px;
             object-fit: cover;
+            background-color: #f1f5f9;
         }
 
         .service-details {
@@ -221,7 +222,7 @@
             font-weight: 600;
         }
 
-        /* 5. معرض صور المختبر والأجهزة (Visual Gallery) */
+        /* 5. معرض الصور */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -233,6 +234,7 @@
             border-radius: 14px;
             overflow: hidden;
             height: 150px;
+            background-color: #f1f5f9;
         }
 
         .gallery-item img {
@@ -251,19 +253,16 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(15, 23, 42, 0.7);
+            background: rgba(15, 23, 42, 0.75);
             color: #fff;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             text-align: center;
-            padding: 4px;
-            font-weight: 600;
+            padding: 5px;
+            font-weight: 700;
         }
 
-        /* 6. نموذج إرسال حالة سريرية (Quick Order Form) */
-        .form-group {
-            margin-bottom: 15px;
-        }
-
+        /* 6. النموذج والأزرار */
+        .form-group { margin-bottom: 15px; }
         .form-group label {
             display: block;
             font-size: 0.9rem;
@@ -271,7 +270,6 @@
             color: var(--dark-text);
             margin-bottom: 6px;
         }
-
         .form-control {
             width: 100%;
             padding: 12px 15px;
@@ -282,26 +280,22 @@
             transition: border 0.2s;
             font-weight: 600;
         }
-
         .form-control:focus {
             border-color: var(--teal);
             box-shadow: 0 0 0 3px rgba(39, 171, 176, 0.15);
         }
-
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
 
-        /* 7. أزرار التواصل المباشر */
         .btn-stack {
             display: flex;
             flex-direction: column;
             gap: 12px;
             margin-top: 20px;
         }
-
         .btn-social {
             display: flex;
             align-items: center;
@@ -314,12 +308,10 @@
             font-size: 1.05rem;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-
         .btn-social:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
-
         .btn-whatsapp { background: #25D366; }
         .btn-instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
         .btn-facebook { background: #1877F2; }
@@ -337,7 +329,6 @@
         }
         .btn-submit:hover { background: #c2932e; }
 
-        /* الفوتر */
         footer {
             text-align: center;
             padding: 20px;
@@ -356,9 +347,9 @@
 </head>
 <body>
 
-    <!-- الهيدر واللوجو مع صورة بانر لمختبر الأسنان -->
+    <!-- البانر الرئيسي برابط متوافق وصريح -->
     <header>
-        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="صناعة الأسنان CAD CAM" class="hero-banner">
+        <img src="https://img.freepik.com/free-photo/dental-technician-working-with-3d-scanner-lab_23-2149372134.jpg" alt="CAD CAM Dental Lab" class="hero-banner">
         
         <div class="header-content">
             <img src="logo.png" alt="مختبر الكوت لصناعة الأسنان" class="logo">
@@ -372,7 +363,7 @@
 
     <div class="container">
 
-        <!-- شريط الإحصائيات -->
+        <!-- الإحصائيات -->
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-num">CAD / CAM</div>
@@ -388,44 +379,44 @@
             </div>
         </div>
 
-        <!-- قسم الخدمات والمنتجات المتخصصة -->
+        <!-- قسم الخدمات الرئيسية المصورة -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-tooth"></i>
-                <h2>خدماتنا ومنتجات مختبر الأسنان</h2>
+                <h2>تخصصات وخدمات المختبر</h2>
             </div>
             <div class="services-grid">
                 
-                <!-- الأطقم كاملة وجزئية -->
+                <!-- صورة طقم أسنان كامل وجزئي -->
                 <div class="service-box">
-                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="أطقم أسنان كاملة وجزئية" class="service-img">
+                    <img src="https://img.freepik.com/free-photo/denture-model-teeth-clean-background_23-2149372120.jpg" alt="أطقم أسنان" class="service-img">
                     <div class="service-details">
                         <h3>أطقم أسنان (كاملة وجزئية)</h3>
-                        <p>تصنيع أطقم الأكريليك والمطاطية (Flex) والمركبة بإنهاء طبيعي مريح.</p>
+                        <p>تصنيع الأطقم الاكريليكية والمطاطية (Flex) بإنهاء طبيعي مريح.</p>
                     </div>
                 </div>
 
-                <!-- التقويم الشفاف والمعدني -->
+                <!-- صورة التقويم الشفاف والمعدني -->
                 <div class="service-box">
-                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="تقويم شفاف ومعدني" class="service-img">
+                    <img src="https://img.freepik.com/free-photo/clear-aligner-teeth-remover-invisible-braces_23-2149372150.jpg" alt="تقويم شفاف ومعدني" class="service-img">
                     <div class="service-details">
                         <h3>التقويم (الشفاف والمعدني)</h3>
                         <p>قوالب التقويم الشفاف الرقمي (Aligners) وتجهيزات التقويم الثابت.</p>
                     </div>
                 </div>
 
-                <!-- الزيركون والإيماكس -->
+                <!-- صورة الزيركون والإيماكس -->
                 <div class="service-box">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="تيجان زيركون وإيماكس" class="service-img">
+                    <img src="https://img.freepik.com/free-photo/dental-prostheses-zirconia-crowns-laboratory_23-2149372140.jpg" alt="تيجان زيركون وإيماكس" class="service-img">
                     <div class="service-details">
                         <h3>تيجان Zirconia & E-Max</h3>
                         <p>تركيبات وعدسات تجميلية فائقة الدقة والشفافية لابتسامة هوليود.</p>
                     </div>
                 </div>
 
-                <!-- أجهزة CAD/CAM والطباعة -->
+                <!-- صورة تقنية CAD/CAM والطباعة -->
                 <div class="service-box">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="أجهزة CAD CAM والطباعة" class="service-img">
+                    <img src="https://img.freepik.com/free-photo/close-up-3d-printer-printing-dental-models_23-2149372160.jpg" alt="أجهزة CAD CAM والطباعة" class="service-img">
                     <div class="service-details">
                         <h3>تقنيات CAD/CAM و 3D</h3>
                         <p>خراطة الزيركون والطباعة ثلاثية الأبعاد بدقة الميكرون الحيوية.</p>
@@ -435,7 +426,7 @@
             </div>
         </div>
 
-        <!-- معرض صور المختبر والأجهزة -->
+        <!-- معرض صور التجهيزات والمختبر -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-microscope"></i>
@@ -443,21 +434,21 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500&q=80" alt="فحص الحالات والتصميم">
-                    <div class="gallery-caption">التصميم الرقمي</div>
+                    <img src="https://img.freepik.com/free-photo/dentist-working-with-cad-cam-computer-software_23-2149372130.jpg" alt="التصميم الرقمي">
+                    <div class="gallery-caption">التصميم الرقمي (CAD)</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=500&q=80" alt="التشطيب والإنهاء">
+                    <img src="https://img.freepik.com/free-photo/technician-finishing-dental-crown-with-brush_23-2149372125.jpg" alt="التشطيب اليدوي">
                     <div class="gallery-caption">التشطيب اليدوي الفني</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=500&q=80" alt="أجهزة الخراطة">
-                    <div class="gallery-caption">أجهزة CAD/CAM</div>
+                    <img src="https://img.freepik.com/free-photo/milling-machine-carving-zirconia-block_23-2149372138.jpg" alt="خراطة الزيركون">
+                    <div class="gallery-caption">أجهزة الخراطة (CAM)</div>
                 </div>
             </div>
         </div>
 
-        <!-- قسم تجهيز حالة جديدة سريعاً للأطباء -->
+        <!-- قسم إرسال حالة -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-file-medical"></i>
@@ -508,7 +499,7 @@
             </form>
         </div>
 
-        <!-- قسم منصات التواصل المباشر -->
+        <!-- قسم التواصل -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-comments"></i>
@@ -530,14 +521,12 @@
             </div>
         </div>
 
-        <!-- الفوتر -->
         <footer>
             © مختبر الكوت لصناعة الأسنان. جميع الحقوق محفوظة.
         </footer>
 
     </div>
 
-    <!-- البرمجة التفاعلية تحويل النموذج للواتساب -->
     <script>
         function sendToWhatsapp(event) {
             event.preventDefault();
