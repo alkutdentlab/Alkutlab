@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مختبر الكوت لصناعة الأسنان الرقمية</title>
 
-    <!-- خطوط Google الرسمية -->
+    <!-- استدعاء خطوط Google الرسمية -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
@@ -16,11 +16,11 @@
     <style>
         :root {
             --teal: #27ABB0;        /* التركواز من الشعار */
-            --teal-light: #eefbfb;  /* تركواز خفيف جداً */
+            --teal-light: #eefbfb;  /* تركواز خفيف جداً للخلفيات */
             --gold: #D6A537;        /* الذهبي من الشعار */
             --gold-light: #fbf7ed;  /* ذهبي خفيف جداً */
-            --dark-text: #1e293b;   
-            --light-bg: #f8fafc;    
+            --dark-text: #1e293b;   /* كحلي رمادي داكن للنصوص */
+            --light-bg: #f8fafc;    /* خلفية بيضاء مائلة للرمادي */
             --white: #ffffff;
             --shadow: 0 10px 30px rgba(39, 171, 176, 0.08);
             --border-radius: 20px;
@@ -30,7 +30,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Cairo', 'Tajawal', system-ui, -apple-system, sans-serif;
+            font-family: 'Cairo', 'Tajawal', 'Inter', system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -47,7 +47,7 @@
             padding: 0 15px;
         }
 
-        /* 1. الهيدر والبانر */
+        /* 1. الهيدر والبانر الرئيسي */
         header {
             background: var(--white);
             border-bottom: 3px solid var(--gold);
@@ -59,26 +59,21 @@
             overflow: hidden;
         }
 
-        .hero-banner-box {
+        .hero-banner {
             width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, var(--teal) 0%, #1d8286 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 3rem;
-            opacity: 0.9;
+            height: 220px;
+            object-fit: cover;
+            filter: brightness(0.85);
         }
 
         .header-content {
-            padding: 0 20px 35px 20px;
+            padding: 20px 20px 35px 20px;
             position: relative;
-            margin-top: -50px;
+            margin-top: -60px;
         }
 
         .logo {
-            width: 160px;
+            width: 170px;
             height: auto;
             background: var(--white);
             padding: 10px;
@@ -89,7 +84,7 @@
 
         h1 {
             color: var(--teal);
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 6px;
         }
@@ -97,7 +92,7 @@
         .subtitle {
             color: var(--gold);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 15px;
         }
 
@@ -130,9 +125,10 @@
         .stat-card.gold-border { border-top-color: var(--gold); }
 
         .stat-num {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: var(--teal);
+            font-family: 'Inter', 'Cairo', sans-serif;
         }
 
         .stat-card.gold-border .stat-num { color: var(--gold); }
@@ -176,57 +172,43 @@
             font-weight: 800;
         }
 
-        /* 4. كروت الخدمات مع أيقونات تفاعلية وصور محلية */
+        /* 4. كروت الخدمات المصورة */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
         }
 
         .service-box {
             background: var(--white);
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(39, 171, 176, 0.2);
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.3s ease;
-            text-align: center;
-            padding: 20px 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
         .service-box:hover {
             transform: translateY(-5px);
             border-color: var(--gold);
-            box-shadow: 0 12px 25px rgba(214, 165, 55, 0.12);
+            box-shadow: 0 12px 25px rgba(214, 165, 55, 0.15);
         }
 
-        /* حاوية الصورة أو الأيقونة */
-        .service-icon-wrapper {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 15px auto;
-            border-radius: 50%;
-            background: var(--teal-light);
-            color: var(--teal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            border: 2px solid rgba(39, 171, 176, 0.2);
-        }
-
-        /* إذا وضعت صورة داخل الكارت بدل الأيقونة */
         .service-img {
             width: 100%;
-            height: 140px;
+            height: 180px;
             object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 12px;
+            background-color: var(--teal-light);
+        }
+
+        .service-details {
+            padding: 15px;
         }
 
         .service-box h3 {
             font-size: 1.05rem;
             color: var(--dark-text);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 700;
         }
 
@@ -236,33 +218,43 @@
             font-weight: 600;
         }
 
-        /* 5. معرض الأعمال المصغر */
+        /* 5. معرض الصور للتجهيزات */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
-        .gallery-card {
-            background: var(--teal-light);
-            border: 1px dashed var(--teal);
+        .gallery-item {
+            position: relative;
             border-radius: 14px;
-            padding: 25px 10px;
+            overflow: hidden;
+            height: 180px;
+            background-color: var(--teal-light);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.75);
+            color: #fff;
+            font-size: 0.82rem;
             text-align: center;
-            color: var(--teal);
-        }
-
-        .gallery-card i {
-            font-size: 2rem;
-            margin-bottom: 8px;
-            color: var(--gold);
-        }
-
-        .gallery-card span {
-            display: block;
-            font-size: 0.85rem;
+            padding: 8px;
             font-weight: 700;
-            color: var(--dark-text);
         }
 
         /* 6. النموذج والأزرار */
@@ -309,10 +301,13 @@
             color: var(--white);
             text-decoration: none;
             font-weight: 700;
-            font-size: 1rem;
-            transition: transform 0.2s;
+            font-size: 1.05rem;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .btn-social:hover { transform: translateY(-2px); }
+        .btn-social:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
         .btn-whatsapp { background: #25D366; }
         .btn-instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
         .btn-facebook { background: #1877F2; }
@@ -343,17 +338,15 @@
             .form-row { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: 1fr; }
             .section-card { padding: 20px 15px; }
-            h1 { font-size: 1.6rem; }
+            h1 { font-size: 1.7rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- البانر الرئيسي -->
+    <!-- البانر الرئيسي: صورة بيئة المختبر -->
     <header>
-        <div class="hero-banner-box">
-            <i class="fa-solid fa-tooth"></i>
-        </div>
+        <img src="https://i.imgur.com/XYMqFHf.jpg" alt="بيئة مختبر الكوت" class="hero-banner">
         
         <div class="header-content">
             <img src="logo.png" alt="مختبر الكوت لصناعة الأسنان" class="logo">
@@ -383,7 +376,7 @@
             </div>
         </div>
 
-        <!-- قسم الخدمات الرئيسية -->
+        <!-- قسم خدمات الأسنان مع صور أعمالك الخاصة -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-tooth"></i>
@@ -391,63 +384,59 @@
             </div>
             <div class="services-grid">
                 
-                <!-- أطقم أسنان -->
+                <!-- صورة طقم كامل -->
                 <div class="service-box">
-                    <div class="service-icon-wrapper">
-                        <i class="fa-solid fa-teeth-open"></i>
+                    <img src="https://i.imgur.com/3uDy8JD.jpg" alt="أطقم أسنان كاملة" class="service-img">
+                    <div class="service-details">
+                        <h3>أطقم أسنان (كاملة وجزئية)</h3>
+                        <p>تصنيع الأطقم الأكريليكية والمطاطية (Flex) بإنهاء طبيعي ومريح.</p>
                     </div>
-                    <h3>أطقم أسنان (كاملة وجزئية)</h3>
-                    <p>تصنيع الأطقم الاكريليكية والمطاطية (Flex) بإنهاء طبيعي مريح.</p>
                 </div>
 
-                <!-- التقويم -->
+                <!-- صورة قشور E-Max -->
                 <div class="service-box">
-                    <div class="service-icon-wrapper">
-                        <i class="fa-solid fa-teeth"></i>
+                    <img src="https://i.imgur.com/lzvwiTz.jpg" alt="قشور إيماكس" class="service-img">
+                    <div class="service-details">
+                        <h3>قشور وفينير E-Max</h3>
+                        <p>عدسات وتغطيات تجميلية فائقة النقاء والشفافية لإبتسامة هوليود.</p>
                     </div>
-                    <h3>التقويم (الشفاف والمعدني)</h3>
-                    <p>قوالب التقويم الشفاف الرقمي (Aligners) وتجهيزات التقويم الثابت.</p>
                 </div>
 
-                <!-- تيجان زيركون -->
+                <!-- صورة تيجان -->
                 <div class="service-box">
-                    <div class="service-icon-wrapper">
-                        <i class="fa-solid fa-gem"></i>
+                    <img src="https://i.imgur.com/y9KAvsh.jpg" alt="تيجان زيركون" class="service-img">
+                    <div class="service-details">
+                        <h3>تيجان وثريد الزيركون</h3>
+                        <p>تركيبات زيركونيا عالية الصلابة مع تطابق تام للحواف واللثة.</p>
                     </div>
-                    <h3>تيجان Zirconia & E-Max</h3>
-                    <p>تركيبات وعدسات تجميلية فائقة الدقة والشفافية لابتسامة هوليود.</p>
                 </div>
 
-                <!-- CAD/CAM -->
+                <!-- صورة تقويم شفاف -->
                 <div class="service-box">
-                    <div class="service-icon-wrapper">
-                        <i class="fa-solid fa-microchip"></i>
+                    <img src="https://i.imgur.com/nnc4kdB.jpg" alt="تقويم شفاف" class="service-img">
+                    <div class="service-details">
+                        <h3>التقويم الشفاف (Aligners)</h3>
+                        <p>تصميم وتصنيع قوالب التقويم الشفاف الرقمي بدقة الميكرون.</p>
                     </div>
-                    <h3>تقنيات CAD/CAM و 3D</h3>
-                    <p>خراطة الزيركون والطباعة ثلاثية الأبعاد بدقة الميكرون الحيوية.</p>
                 </div>
 
             </div>
         </div>
 
-        <!-- معرض نماذج وتجهيزات العمل -->
+        <!-- معرض صور الأجهزة والتجهيزات الرقمية -->
         <div class="section-card">
             <div class="section-header">
-                <i class="fa-solid fa-cubes"></i>
-                <h2>تقنيات وأنظمة العمل</h2>
+                <i class="fa-solid fa-microchip"></i>
+                <h2>التجهيزات والتقنيات الرقمية</h2>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-card">
-                    <i class="fa-solid fa-desktop"></i>
-                    <span>تصميم رقمي (CAD)</span>
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/mmuF2ya.jpg" alt="تقنية CAD CAM">
+                    <div class="gallery-caption">أنظمة التصميم والخراطة CAD/CAM</div>
                 </div>
-                <div class="gallery-card">
-                    <i class="fa-solid fa-gear"></i>
-                    <span>خراطة الزيركون (CAM)</span>
-                </div>
-                <div class="gallery-card">
-                    <i class="fa-solid fa-print"></i>
-                    <span>طباعة أسنان 3D</span>
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/5LP85E2.jpg" alt="طابعة ثلاثية الأبعاد">
+                    <div class="gallery-caption">الطباعة ثلاثية الأبعاد للأسنان (3D Printer)</div>
                 </div>
             </div>
         </div>
