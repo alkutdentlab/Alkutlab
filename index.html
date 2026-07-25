@@ -47,7 +47,7 @@
             padding: 0 15px;
         }
 
-        /* 1. الهيدر والبطل (Hero Section مع صورة خلفية) */
+        /* 1. الهيدر والبطل (Hero Section مع صورة خلفية للمختبر) */
         header {
             background: var(--white);
             border-bottom: 3px solid var(--gold);
@@ -61,7 +61,7 @@
 
         .hero-banner {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
             opacity: 0.85;
         }
@@ -176,10 +176,10 @@
             font-weight: 800;
         }
 
-        /* 4. كروت الخدمات مع الصور */
+        /* 4. كروت الخدمات المصورة تخصيص كامل */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 18px;
         }
 
@@ -200,7 +200,7 @@
 
         .service-img {
             width: 100%;
-            height: 130px;
+            height: 150px;
             object-fit: cover;
         }
 
@@ -221,7 +221,7 @@
             font-weight: 600;
         }
 
-        /* 5. معرض أعمال مصغر (Visual Gallery) */
+        /* 5. معرض صور المختبر والأجهزة (Visual Gallery) */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -232,7 +232,7 @@
             position: relative;
             border-radius: 14px;
             overflow: hidden;
-            height: 140px;
+            height: 150px;
         }
 
         .gallery-item img {
@@ -244,6 +244,19 @@
 
         .gallery-item:hover img {
             transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.7);
+            color: #fff;
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 4px;
+            font-weight: 600;
         }
 
         /* 6. نموذج إرسال حالة سريرية (Quick Order Form) */
@@ -343,9 +356,9 @@
 </head>
 <body>
 
-    <!-- الهيدر واللوجو مع صورة بانر خلفية -->
+    <!-- الهيدر واللوجو مع صورة بانر لمختبر الأسنان -->
     <header>
-        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80" alt="Dental Lab Banner" class="hero-banner">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="صناعة الأسنان CAD CAM" class="hero-banner">
         
         <div class="header-content">
             <img src="logo.png" alt="مختبر الكوت لصناعة الأسنان" class="logo">
@@ -375,64 +388,71 @@
             </div>
         </div>
 
-        <!-- قسم الخدمات المصورة -->
+        <!-- قسم الخدمات والمنتجات المتخصصة -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-tooth"></i>
-                <h2>خدماتنا وتقنياتنا المصورة</h2>
+                <h2>خدماتنا ومنتجات مختبر الأسنان</h2>
             </div>
             <div class="services-grid">
                 
+                <!-- الأطقم كاملة وجزئية -->
                 <div class="service-box">
-                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=500&q=80" alt="Zirconia" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="أطقم أسنان كاملة وجزئية" class="service-img">
                     <div class="service-details">
-                        <h3>تيجان الزيركون (Zirconia)</h3>
-                        <p>صلابة استثنائية مع شفافية عالية تشبه الأسنان الطبيعية.</p>
+                        <h3>أطقم أسنان (كاملة وجزئية)</h3>
+                        <p>تصنيع أطقم الأكريليك والمطاطية (Flex) والمركبة بإنهاء طبيعي مريح.</p>
                     </div>
                 </div>
 
+                <!-- التقويم الشفاف والمعدني -->
                 <div class="service-box">
-                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=500&q=80" alt="E-Max" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="تقويم شفاف ومعدني" class="service-img">
                     <div class="service-details">
-                        <h3>E-Max & Veneers</h3>
-                        <p>عدسات وتيجان عالية الجمال لابتسامة هوليود الجذابة.</p>
+                        <h3>التقويم (الشفاف والمعدني)</h3>
+                        <p>قوالب التقويم الشفاف الرقمي (Aligners) وتجهيزات التقويم الثابت.</p>
                     </div>
                 </div>
 
+                <!-- الزيركون والإيماكس -->
                 <div class="service-box">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" alt="Implants" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="تيجان زيركون وإيماكس" class="service-img">
                     <div class="service-details">
-                        <h3>تركيبات الزرعات (Implants)</h3>
-                        <p>جسور ودعامات مخصصة لجميع أنواع أنظمة الزراعة.</p>
+                        <h3>تيجان Zirconia & E-Max</h3>
+                        <p>تركيبات وعدسات تجميلية فائقة الدقة والشفافية لابتسامة هوليود.</p>
                     </div>
                 </div>
 
+                <!-- أجهزة CAD/CAM والطباعة -->
                 <div class="service-box">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="3D Printing" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="أجهزة CAD CAM والطباعة" class="service-img">
                     <div class="service-details">
-                        <h3>الطباعة ثلاثية الأبعاد (3D)</h3>
-                        <p>نماذج وتطبيقات تقويمية وسواقط بدقة متناهية.</p>
+                        <h3>تقنيات CAD/CAM و 3D</h3>
+                        <p>خراطة الزيركون والطباعة ثلاثية الأبعاد بدقة الميكرون الحيوية.</p>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- قسم معرض الصور السريع -->
+        <!-- معرض صور المختبر والأجهزة -->
         <div class="section-card">
             <div class="section-header">
-                <i class="fa-solid fa-images"></i>
-                <h2>جودة التصنيع والتشطيب النهائي</h2>
+                <i class="fa-solid fa-microscope"></i>
+                <h2>بيئة العمل والتجهيزات داخل المختبر</h2>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=500&q=80" alt="Gallery Image 1">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500&q=80" alt="فحص الحالات والتصميم">
+                    <div class="gallery-caption">التصميم الرقمي</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500&q=80" alt="Gallery Image 2">
+                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=500&q=80" alt="التشطيب والإنهاء">
+                    <div class="gallery-caption">التشطيب اليدوي الفني</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=500&q=80" alt="Gallery Image 3">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=500&q=80" alt="أجهزة الخراطة">
+                    <div class="gallery-caption">أجهزة CAD/CAM</div>
                 </div>
             </div>
         </div>
@@ -465,8 +485,9 @@
                         <select id="workType" class="form-control" required>
                             <option value="زيركون (Zirconia)">زيركون (Zirconia)</option>
                             <option value="إيماكس (E-Max)">إيماكس (E-Max)</option>
+                            <option value="طقم كامل / جزئي (Denture)">طقم كامل / جزئي (Denture)</option>
+                            <option value="تقويم شفاف / معدني">تقويم شفاف / معدني</option>
                             <option value="تركيبة على زرعة (Implant)">تركيبة على زرعة (Implant)</option>
-                            <option value="مؤقت (Temporary)">مؤقت (Temporary)</option>
                             <option value="أخرى">عمل آخر</option>
                         </select>
                     </div>
