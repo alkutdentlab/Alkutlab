@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مختبر الكوت لصناعة الأسنان الرقمية</title>
+
+    <!-- استدعاء خط "جنة" العربي وخط "Inter" الإنجليزي -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-janna-lt@1.0.0/css/font-janna-lt.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --teal: #27ABB0;        /* التركواز من الشعار */
-            --teal-light: #eefbfb;  /* تركواز خفيف جدا خلفيات */
+            --teal-light: #eefbfb;  /* تركواز خفيف جداً للخلفيات */
             --gold: #D6A537;        /* الذهبي من الشعار */
-            --gold-light: #fbf7ed;  /* ذهبي خفيف جدا */
+            --gold-light: #fbf7ed;  /* ذهبي خفيف جداً */
             --dark-text: #1e293b;   /* كحلي رمادي داكن للنصوص */
             --light-bg: #f8fafc;    /* خلفية بيضاء مائلة للرمادي النظيف */
             --white: #ffffff;
@@ -24,14 +31,15 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            /* اعتماد خط جنة للعربي وInter للإنجليزي والأرقام */
+            font-family: 'Inter', 'Janna LT', system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--light-bg);
             color: var(--dark-text);
-            line-height: 1.6;
+            line-height: 1.7;
             padding-bottom: 40px;
         }
 
@@ -45,7 +53,7 @@
         header {
             background: var(--white);
             border-bottom: 3px solid var(--gold);
-            padding: 30px 20px;
+            padding: 35px 20px;
             border-radius: 0 0 var(--border-radius) var(--border-radius);
             box-shadow: var(--shadow);
             text-align: center;
@@ -62,8 +70,8 @@
 
         h1 {
             color: var(--teal);
-            font-size: 2rem;
-            font-weight: 800;
+            font-size: 2.1rem;
+            font-weight: 700;
             margin-bottom: 8px;
         }
 
@@ -104,9 +112,10 @@
         }
 
         .stat-num {
-            font-size: 1.8rem;
-            font-weight: 800;
+            font-size: 1.7rem;
+            font-weight: 700;
             color: var(--teal);
+            font-family: 'Inter', 'Janna LT', sans-serif;
         }
 
         .stat-card.gold-border .stat-num {
@@ -116,7 +125,7 @@
         .stat-desc {
             font-size: 0.85rem;
             color: #64748b;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         /* 3. أقسام المحتوى (Sections Styling) */
@@ -139,7 +148,7 @@
         }
 
         .section-header i {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--gold);
             background: var(--gold-light);
             padding: 10px;
@@ -149,6 +158,7 @@
         .section-header h2 {
             font-size: 1.3rem;
             color: var(--teal);
+            font-weight: 700;
         }
 
         /* 4. كروت الخدمات والتقنيات */
@@ -183,6 +193,7 @@
             font-size: 1.05rem;
             color: var(--dark-text);
             margin-bottom: 6px;
+            font-weight: 700;
         }
 
         .service-box p {
@@ -260,7 +271,7 @@
             width: 100%;
             padding: 15px;
             border-radius: 12px;
-            font-weight: 800;
+            font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
             transition: background 0.2s;
@@ -273,13 +284,13 @@
             padding: 20px;
             color: #94a3b8;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         @media (max-width: 600px) {
             .form-row { grid-template-columns: 1fr; }
             .section-card { padding: 20px 15px; }
-            h1 { font-size: 1.6rem; }
+            h1 { font-size: 1.7rem; }
         }
     </style>
 </head>
@@ -429,7 +440,6 @@
         function sendToWhatsapp(event) {
             event.preventDefault();
             
-            // ادخل رقم الواتساب الخاص بك هنا شامل مفتاح الدولة دون أصفار أو علامة +
             const phoneNumber = "YOUR_PHONE_NUMBER"; 
             
             const docName = document.getElementById('doctorName').value;
