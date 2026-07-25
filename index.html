@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مختبر الكوت لصناعة الأسنان</title>
+    <title>مختبر الكوت لصناعة الأسنان الرقمية</title>
     <!-- أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --teal: #27ABB0;
+            --teal-dark: #1e878b;
             --gold: #D6A537;
+            --gold-light: #f3e5ab;
             --dark: #0f172a;
-            --glass-bg: rgba(255, 255, 255, 0.85);
-            --glass-border: rgba(255, 255, 255, 0.6);
+            --dark-card: rgba(15, 23, 42, 0.65);
+            --light-card: rgba(255, 255, 255, 0.85);
+            --border-color: rgba(214, 165, 55, 0.3);
         }
 
         * {
@@ -21,258 +24,370 @@
             margin: 0;
             padding: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            scroll-behavior: smooth;
         }
 
+        /* خلفية متطورة متحركة */
         body {
-            /* خلفية حديثة متدرجة هادئة بألوان الهوية */
-            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 50%, #fef3c7 100%);
-            color: var(--dark);
+            background: linear-gradient(-45deg, #0f172a, #132e38, #1a2332, #0d2427);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #f8fafc;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px 10px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-wrapper {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* الهيدر العلوي والتأثير الزجاجي */
+        header {
+            background: var(--light-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--teal), transparent);
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
+        }
+
+        h1 {
+            color: var(--dark);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .hero-tag {
+            color: var(--teal-dark);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-desc {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* شريط الإحصائيات الفخم */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 15px 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-3px);
+        }
+
+        .stat-number {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        /* قسم الخدمات التفاعلي */
+        .section-title {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px 15px;
+            gap: 10px;
         }
 
-        /* البطاقة الرئيسية المودرن */
-        .container {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 28px;
-            max-width: 460px;
-            width: 100%;
-            padding: 40px 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-            text-align: center;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
 
-        /* شريط علوي جمالي بلون الذهبي */
-        .container::before {
+        .service-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--teal), var(--gold));
+            width: 4px;
+            height: 100%;
+            background: var(--teal);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        /* الشعار */
-        .logo-box {
-            margin-bottom: 20px;
-        }
-        
-        .logo {
-            width: 180px;
-            height: auto;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* العناوين */
-        h1 {
-            color: var(--dark);
-            font-size: 1.6rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            color: #ffffff;
             margin-bottom: 6px;
         }
 
-        .tagline {
-            color: var(--teal);
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .bio {
-            color: #475569;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            padding: 0 10px;
-        }
-
-        /* شبكة الميزات المودرن */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            border-radius: 16px;
-            padding: 12px 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-align: right;
-            transition: transform 0.2s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-2px);
-            background: #ffffff;
-        }
-
-        .feature-card i {
-            font-size: 1.2rem;
-            color: var(--gold);
-            background: rgba(214, 165, 55, 0.1);
-            padding: 8px;
-            border-radius: 10px;
-        }
-
-        .feature-card span {
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: #334155;
-        }
-
-        /* قائمة أزرار التواصل */
-        .links-header {
-            font-size: 0.85rem;
-            font-weight: 700;
+        .service-card p {
+            font-size: 0.8rem;
             color: #94a3b8;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            line-height: 1.5;
         }
 
-        .btn-stack {
+        /* قسم روابط التواصل المتطور */
+        .contact-section {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .cta-buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .btn {
+        .custom-btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
+            padding: 18px 24px;
             border-radius: 16px;
             text-decoration: none;
-            color: #ffffff;
+            color: white;
             font-weight: 700;
-            font-size: 1rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: all 0.25s ease;
+            font-size: 1.05rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        .custom-btn:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
         }
 
-        .btn-content {
+        .btn-left {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
-        .btn-content i {
-            font-size: 1.4rem;
+        .btn-left i {
+            font-size: 1.6rem;
         }
 
-        /* ألوان الأزرار المتناسقة */
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-        }
+        .btn-whatsapp { background: linear-gradient(135deg, #25D366, #075e54); }
+        .btn-instagram { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
+        .btn-facebook { background: linear-gradient(135deg, #1877f2, #0d52b5); }
 
-        .btn-instagram {
-            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        .btn-facebook {
-            background: linear-gradient(135deg, #1877F2, #0b51b7);
-        }
-
-        /* الفوتر */
         footer {
-            margin-top: 35px;
-            font-size: 0.75rem;
-            color: #94a3b8;
-            font-weight: 500;
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* التجاوب مع الشاشات الصغير جداً */
+        @media (max-width: 480px) {
+            header { padding: 20px 15px; }
+            .logo { width: 160px; }
+            h1 { font-size: 1.5rem; }
+            .stats-bar { grid-template-columns: 1fr; gap: 10px; }
+            .services-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- الشعار -->
-        <div class="logo-box">
-            <img src="logo.png" alt="مختبر الكوت لصناعة الأسنان" class="logo">
-        </div>
-
-        <!-- العناوين -->
-        <h1>مختبر الكوت</h1>
-        <div class="tagline">لصناعة الأسنان الرقمية</div>
-
-        <p class="bio">
-            نح المهارة اليدوية بالتقنيات الرقمية الحديثة لتقديم تركيبات سنية فائقة الدقة والجمال.
-        </p>
-
-        <!-- الميزات السريعة -->
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-microscope"></i>
-                <span>دقة CAD/CAM</span>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-bolt"></i>
-                <span>سرعة الإنجاز</span>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-tooth"></i>
-                <span>مظهر طبيعي</span>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-award"></i>
-                <span>خامات عالمية</span>
-            </div>
-        </div>
-
-        <!-- أزرار التواصل -->
-        <div class="links-header">منصات التواصل المباشر</div>
+    <div class="main-wrapper">
         
-        <div class="btn-stack">
-            <!-- استبدل الرقم برقمك الحقيقي شامل مفتاح الدولة -->
-            <a href="https://wa.me/YOUR_PHONE_NUMBER" class="btn btn-whatsapp" target="_blank">
-                <div class="btn-content">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>واتساب</span>
-                </div>
-                <i class="fa-solid fa-chevron-left" style="font-size: 0.8rem; opacity: 0.8;"></i>
-            </a>
+        <!-- الهيدر والتعريف -->
+        <header>
+            <img src="logo.png" alt="مختبر الكوت لصناعة الأسنان" class="logo">
+            <h1>مختبر الكوت</h1>
+            <div class="hero-tag">لصناعة الأسنان الرقمية والتركيبات الحديثة</div>
+            <p class="hero-desc">
+                نقدّم لعيادات وأطباء الأسنان أحدث الحلول الرقمية الشاملة بتقنية CAD/CAM بخامات عالمية معتمدة لضمان الدقة والمتانة والأناقة.
+            </p>
+        </header>
 
-            <!-- استبدل الرابط برابط إنستغرام الخاص بك -->
-            <a href="YOUR_INSTAGRAM_LINK" class="btn btn-instagram" target="_blank">
-                <div class="btn-content">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span>إنستغرام</span>
-                </div>
-                <i class="fa-solid fa-chevron-left" style="font-size: 0.8rem; opacity: 0.8;"></i>
-            </a>
+        <!-- شريط الأرقام والإحصائيات -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">دقة رقمية CAD/CAM</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">عالمية</div>
+                <div class="stat-label">خامات Zirconia & E-max</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">قياسي</div>
+                <div class="stat-label">سرعة التسليم والإنجاز</div>
+            </div>
+        </div>
 
-            <!-- استبدل الرابط برابط فيسبوك الخاص بك -->
-            <a href="YOUR_FACEBOOK_LINK" class="btn btn-facebook" target="_blank">
-                <div class="btn-content">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <span>فيسبوك</span>
-                </div>
-                <i class="fa-solid fa-chevron-left" style="font-size: 0.8rem; opacity: 0.8;"></i>
-            </a>
+        <!-- معرض الخدمات والتخصصات -->
+        <div class="section-title">
+            <i class="fa-solid fa-tooth"></i> خدماتنا وتقنياتنا
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-microscope service-icon"></i>
+                <h3>تصميم CAD/CAM</h3>
+                <p>خرائط وتصميمات سنية ثلاثية الأبعاد تناسب أدق تفاصيل الحالة.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-gem service-icon"></i>
+                <h3>زيركون و E-Max</h3>
+                <p>تركيبات وتيجان فائقة الصلابة مع تطابق كامل للون الطبيعي.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-wand-magic-sparkles service-icon"></i>
+                <h3>تصميم الابتسامة</h3>
+                <p>حلول التجميل الرقمي وابتسامة هوليود بلمسات احترافية.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-shield-halved service-icon"></i>
+                <h3>الجسور والزرعات</h3>
+                <p>حلول تعويضية متينة تعتمد على معايير الجودة العالمية.</p>
+            </div>
+        </div>
+
+        <!-- قسم أزرار التواصل المباشرة -->
+        <div class="contact-section">
+            <div class="section-title" style="margin-bottom: 5px;">
+                <i class="fa-solid fa-headset"></i> التواصل المباشر مع المختبر
+            </div>
+            <p style="font-size: 0.85rem; color: #94a3b8;">يمكنكم إرسال الحالات والاستفسارات فوراً عبر المنصات التالية:</p>
+
+            <div class="cta-buttons">
+                <!-- استبدل الرقم برقم الواتساب الخاص بك شامل المفتاح الدولي -->
+                <a href="https://wa.me/YOUR_PHONE_NUMBER" class="custom-btn btn-whatsapp" target="_blank">
+                    <div class="btn-left">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>تواصل فوراً عبر واتساب</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+
+                <!-- استبدل الرابط برابط حساب إنستغرام -->
+                <a href="YOUR_INSTAGRAM_LINK" class="custom-btn btn-instagram" target="_blank">
+                    <div class="btn-left">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>متابعة أعمالنا على إنستغرام</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+
+                <!-- استبدل الرابط برابط صفحة فيسبوك -->
+                <a href="YOUR_FACEBOOK_LINK" class="custom-btn btn-facebook" target="_blank">
+                    <div class="btn-left">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <span>صفحتنا على فيسبوك</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+            </div>
         </div>
 
         <footer>
             © مختبر الكوت لصناعة الأسنان. جميع الحقوق محفوظة.
         </footer>
+
     </div>
 
 </body>
