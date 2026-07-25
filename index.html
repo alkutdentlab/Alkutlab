@@ -4,111 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مختبر الكوت لصناعة الأسنان</title>
-    <!-- رابط Font Awesome للأيقونات -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- رابط ملف التنسيق -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --teal: #27ABB0;
+            --gold: #D6A537;
+            --bg: #F8FAFC;
+            --text: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            padding: 20px 15px;
+        }
+
+        .card {
+            background: #FFFFFF;
+            max-width: 480px;
+            width: 100%;
+            border-radius: 24px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .logo {
+            width: 170px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--teal);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: #64748B;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .feature-item {
+            background: #F1F5F9;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .feature-item i {
+            color: var(--teal);
+            margin-left: 5px;
+        }
+
+        .links-title {
+            font-size: 0.9rem;
+            color: #94A3B8;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .btn-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        .whatsapp { background-color: #25D366; }
+        .instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+        .facebook { background-color: #1877F2; }
+
+        .btn-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.75rem;
+            color: #CBD5E1;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <!-- قسم الهيدر والبطل -->
-        <header class="hero-section" style="background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.9) 100%), url('images/hero-lab.jpg');">
-            <div class="content-wrapper">
-                <img src="images/logo.png" alt="شعار مختبر الكوت" class="main-logo">
-                <h1 class="main-title">نحو <span class="highlight">ابتسامة</span> مثالية.</h1>
-                <div class="intro-text">
-                    <p>في مختبرنا، نحول خطط طبيب الأسنان إلى تركيبات سنية دقيقة باستخدام أحدث الأجهزة والمواد العالمية.</p>
-                    <p>نلتزم بتقديم حلول تجمع بين الدقة والمتانة والمظهر الطبيعي، مع سرعة الإنجاز وجودة يمكن الوثوق بها.</p>
-                </div>
-            </div>
-        </header>
+    <div class="card">
+        <!-- الشعار -->
+        <img src="logo.png" alt="مختبر الكوت لصناعة الأسنان" class="logo">
+        
+        <!-- العناوين -->
+        <h1>مختبر الكوت</h1>
+        <div class="subtitle">لصناعة الأسنان الرقمية</div>
+        
+        <p class="description">
+            نحول خطط طبيب الأسنان إلى تركيبات سنية دقيقة باستخدام أحدث التقنيات الرقمية والمواد العالمية.
+        </p>
 
-        <!-- قسم تواصلوا معنا (المربع الأبيض) -->
-        <section class="contact-prompt">
-            <div class="content-wrapper">
-                <div class="prompt-box">
-                    <div class="prompt-icon">
-                        <i class="far fa-comments"></i>
-                    </div>
-                    <div class="prompt-text">
-                        <h3>تواصلوا معنا عبر منصات التواصل الاجتماعي</h3>
-                        <p>للحصول على استشاراتكم والإجابة عن جميع استفساراتكم.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- ميزات سريعة مرتبة -->
+        <div class="features">
+            <div class="feature-item"><i class="fas fa-microscope"></i> دقة عالية</div>
+            <div class="feature-item"><i class="fas fa-bolt"></i> سرعة إنجاز</div>
+            <div class="feature-item"><i class="fas fa-tooth"></i> مظهر طبيعي</div>
+            <div class="feature-item"><i class="fas fa-shield-alt"></i> متانة وجودة</div>
+        </div>
 
-        <!-- قسم الميزات -->
-        <section class="features-section">
-            <div class="content-wrapper">
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <i class="far fa-clock"></i>
-                        <h4>سرعة الإنجاز</h4>
-                        <p>التزام بالوقت دون التأثير على الجودة</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="far fa-user-circle"></i> <!-- أيقونة تقريبية للمظهر الطبيعي -->
-                        <h4>مظهر طبيعي</h4>
-                        <p>تركيبات تشبه الأسنان الطبيعية بدقة</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="far fa-check-square"></i>
-                        <h4>متانة وجودة</h4>
-                        <p>مواد عالمية تضمن الصلابة والاستدامة</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="far fa-dot-circle"></i> <!-- أيقونة تقريبية للدقة -->
-                        <h4>دقة عالية</h4>
-                        <p>أعلى معايير الدقة في كل تفصيلة</p>
-                    </div>
+        <!-- أزرار التواصل -->
+        <div class="links-title">تواصل معنا مباشرة</div>
+        <div class="btn-list">
+            <a href="https://wa.me/YOUR_PHONE_NUMBER" class="btn whatsapp" target="_blank">
+                <div class="btn-text">
+                    <i class="fab fa-whatsapp fa-lg"></i>
+                    <span>واتساب</span>
                 </div>
-            </div>
-        </section>
+                <i class="fas fa-chevron-left"></i>
+            </a>
 
-        <!-- قسم الأزرار -->
-        <section class="social-links-section">
-            <div class="content-wrapper">
-                <div class="links-container">
-                    <a href="#" class="social-btn facebook">
-                        <i class="fab fa-facebook-f start-icon"></i>
-                        <span>فيسبوك</span>
-                        <i class="fas fa-chevron-left end-icon"></i>
-                    </a>
-                    <a href="#" class="social-btn instagram">
-                        <i class="fab fa-instagram start-icon"></i>
-                        <span>إنستغرام</span>
-                        <i class="fas fa-chevron-left end-icon"></i>
-                    </a>
-                    <a href="#" class="social-btn whatsapp">
-                        <i class="fab fa-whatsapp start-icon"></i>
-                        <span>واتساب</span>
-                        <i class="fas fa-chevron-left end-icon"></i>
-                    </a>
-                    <a href="#" class="social-btn location">
-                        <i class="fas fa-map-marker-alt start-icon"></i>
-                        <span>العنوان</span>
-                        <i class="fas fa-chevron-left end-icon"></i>
-                    </a>
+            <a href="YOUR_INSTAGRAM_LINK" class="btn instagram" target="_blank">
+                <div class="btn-text">
+                    <i class="fab fa-instagram fa-lg"></i>
+                    <span>إنستغرام</span>
                 </div>
-            </div>
-        </section>
+                <i class="fas fa-chevron-left"></i>
+            </a>
 
-        <!-- الفوتر -->
-        <footer class="main-footer">
-            <div class="content-wrapper">
-                <div class="footer-content">
-                    <img src="images/logo.png" alt="شعار مختبر الكوت" class="footer-logo">
-                    <div class="footer-center">
-                        <p class="partner-text">شريككم في صناعة الابتسامة.</p>
-                        <p class="copyright">© مختبر الكوت لصناعة الأسنان. جميع الحقوق محفوظة.</p>
-                    </div>
-                    <!-- يمكنك وضع صورة الضرسين هنا -->
-                    <!-- <img src="images/molars-footer.png" alt="molars" class="footer-molars"> -->
-                    <div class="footer-spacer"></div> <!-- بديل إذا لم تكن هناك صورة -->
+            <a href="YOUR_FACEBOOK_LINK" class="btn facebook" target="_blank">
+                <div class="btn-text">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                    <span>فيسبوك</span>
                 </div>
-            </div>
+                <i class="fas fa-chevron-left"></i>
+            </a>
+        </div>
+
+        <footer>
+            © مختبر الكوت لصناعة الأسنان
         </footer>
     </div>
 
