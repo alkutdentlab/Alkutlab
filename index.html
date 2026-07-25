@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مختبر الكوت لصناعة الأسنان الرقمية</title>
 
-    <!-- استدعاء خطوط Google الرسمية -->
+    <!-- استدعاء خطوط Google الرسمية: Cairo للعربي و Inter للإنجليزي -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
@@ -15,12 +15,12 @@
     
     <style>
         :root {
-            --teal: #27ABB0;        /* التركواز */
-            --teal-light: #eefbfb;
-            --gold: #D6A537;        /* الذهبي */
-            --gold-light: #fbf7ed;
-            --dark-text: #1e293b;
-            --light-bg: #f8fafc;
+            --teal: #27ABB0;        /* التركواز من الشعار */
+            --teal-light: #eefbfb;  /* تركواز خفيف جداً للخلفيات */
+            --gold: #D6A537;        /* الذهبي من الشعار */
+            --gold-light: #fbf7ed;  /* ذهبي خفيف جداً */
+            --dark-text: #1e293b;   /* كحلي رمادي داكن للنصوص */
+            --light-bg: #f8fafc;    /* خلفية بيضاء مائلة للرمادي النظيف */
             --white: #ffffff;
             --shadow: 0 10px 30px rgba(39, 171, 176, 0.08);
             --border-radius: 20px;
@@ -47,7 +47,7 @@
             padding: 0 15px;
         }
 
-        /* 1. الهيدر والبانر الرئيسي */
+        /* 1. الهيدر والبطل (Hero Section مع صورة خلفية) */
         header {
             background: var(--white);
             border-bottom: 3px solid var(--gold);
@@ -61,14 +61,25 @@
 
         .hero-banner {
             width: 100%;
-            height: 240px;
+            height: 180px;
             object-fit: cover;
-            filter: brightness(0.85);
+            opacity: 0.85;
         }
 
         .header-content {
             padding: 20px 20px 35px 20px;
             position: relative;
+            margin-top: -60px;
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            background: var(--white);
+            padding: 10px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            margin-bottom: 15px;
         }
 
         h1 {
@@ -93,7 +104,7 @@
             font-weight: 600;
         }
 
-        /* 2. الإحصائيات */
+        /* 2. شريط الإحصائيات (Stats Bar) */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -111,15 +122,20 @@
             box-shadow: var(--shadow);
         }
 
-        .stat-card.gold-border { border-top-color: var(--gold); }
-
-        .stat-num {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--teal);
+        .stat-card.gold-border {
+            border-top-color: var(--gold);
         }
 
-        .stat-card.gold-border .stat-num { color: var(--gold); }
+        .stat-num {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--teal);
+            font-family: 'Inter', 'Cairo', sans-serif;
+        }
+
+        .stat-card.gold-border .stat-num {
+            color: var(--gold);
+        }
 
         .stat-desc {
             font-size: 0.88rem;
@@ -127,7 +143,7 @@
             font-weight: 700;
         }
 
-        /* 3. الأقسام */
+        /* 3. أقسام المحتوى (Sections Styling) */
         .section-card {
             background: var(--white);
             border-radius: var(--border-radius);
@@ -141,13 +157,13 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 2px solid var(--teal-light);
             padding-bottom: 12px;
         }
 
         .section-header i {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--gold);
             background: var(--gold-light);
             padding: 10px;
@@ -160,11 +176,11 @@
             font-weight: 800;
         }
 
-        /* 4. كروت الخدمات المصورة */
+        /* 4. كروت الخدمات مع الصور */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
         }
 
         .service-box {
@@ -184,9 +200,8 @@
 
         .service-img {
             width: 100%;
-            height: 180px;
+            height: 130px;
             object-fit: cover;
-            background-color: var(--teal-light);
         }
 
         .service-details {
@@ -206,19 +221,18 @@
             font-weight: 600;
         }
 
-        /* 5. معرض التجهيزات */
+        /* 5. معرض أعمال مصغر (Visual Gallery) */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
         }
 
         .gallery-item {
             position: relative;
             border-radius: 14px;
             overflow: hidden;
-            height: 200px;
-            background-color: var(--teal-light);
+            height: 140px;
         }
 
         .gallery-item img {
@@ -232,21 +246,11 @@
             transform: scale(1.08);
         }
 
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 23, 42, 0.8);
-            color: #fff;
-            font-size: 0.85rem;
-            text-align: center;
-            padding: 8px;
-            font-weight: 700;
+        /* 6. نموذج إرسال حالة سريرية (Quick Order Form) */
+        .form-group {
+            margin-bottom: 15px;
         }
 
-        /* 6. النموذج والروابط */
-        .form-group { margin-bottom: 15px; }
         .form-group label {
             display: block;
             font-size: 0.9rem;
@@ -254,6 +258,7 @@
             color: var(--dark-text);
             margin-bottom: 6px;
         }
+
         .form-control {
             width: 100%;
             padding: 12px 15px;
@@ -264,22 +269,26 @@
             transition: border 0.2s;
             font-weight: 600;
         }
+
         .form-control:focus {
             border-color: var(--teal);
             box-shadow: 0 0 0 3px rgba(39, 171, 176, 0.15);
         }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
 
+        /* 7. أزرار التواصل المباشر */
         .btn-stack {
             display: flex;
             flex-direction: column;
             gap: 12px;
             margin-top: 20px;
         }
+
         .btn-social {
             display: flex;
             align-items: center;
@@ -292,14 +301,15 @@
             font-size: 1.05rem;
             transition: transform 0.2s, box-shadow 0.2s;
         }
+
         .btn-social:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
+
         .btn-whatsapp { background: #25D366; }
         .btn-instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
         .btn-facebook { background: #1877F2; }
-        
         .btn-submit { 
             background: var(--gold); 
             color: var(--white);
@@ -314,6 +324,7 @@
         }
         .btn-submit:hover { background: #c2932e; }
 
+        /* الفوتر */
         footer {
             text-align: center;
             padding: 20px;
@@ -332,11 +343,12 @@
 </head>
 <body>
 
-    <!-- الهيدر والبانر -->
+    <!-- الهيدر واللوجو مع صورة بانر خلفية -->
     <header>
-        <img src="[attachment_2](attachment)" alt="مختبر الكوت" class="hero-banner">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80" alt="Dental Lab Banner" class="hero-banner">
         
         <div class="header-content">
+            <img src="logo.png" alt="مختبر الكوت لصناعة الأسنان" class="logo">
             <h1>مختبر الكوت</h1>
             <div class="subtitle">لصناعة الأسنان الرقمية والتركيبات الحديثة</div>
             <p class="hero-text">
@@ -347,90 +359,85 @@
 
     <div class="container">
 
-        <!-- الإحصائيات والتقنيات -->
+        <!-- شريط الإحصائيات -->
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-num">CAD / CAM</div>
-                <div class="stat-desc">تكنولوجيا التصميم والخراطة الرقمية</div>
+                <div class="stat-desc">تكنولوجيا التصميم الرقمي</div>
             </div>
             <div class="stat-card gold-border">
                 <div class="stat-num">100%</div>
-                <div class="stat-desc">خامات معتمدة ودقة متناهية</div>
+                <div class="stat-desc">خامات معتمدة وحيوية</div>
             </div>
             <div class="stat-card">
                 <div class="stat-num">تسليم دقيق</div>
-                <div class="stat-desc">التزام تام بمواعيد الأطباء</div>
+                <div class="stat-desc">التزام تام بالمواعيد</div>
             </div>
         </div>
 
-        <!-- الخدمات المصورة -->
+        <!-- قسم الخدمات المصورة -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-tooth"></i>
-                <h2>تخصصات وخدمات المختبر</h2>
+                <h2>خدماتنا وتقنياتنا المصورة</h2>
             </div>
             <div class="services-grid">
                 
-                <!-- Complete denture -->
                 <div class="service-box">
-                    <img src="[attachment_5](attachment)" alt="Complete Denture" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=500&q=80" alt="Zirconia" class="service-img">
                     <div class="service-details">
-                        <h3>أطقم الأسنان الكاملة (Complete Dentures)</h3>
-                        <p>تصنيع الأطقم الكاملة بإنهاء طبيعي وراحة تامة للمريض.</p>
+                        <h3>تيجان الزيركون (Zirconia)</h3>
+                        <p>صلابة استثنائية مع شفافية عالية تشبه الأسنان الطبيعية.</p>
                     </div>
                 </div>
 
-                <!-- Partial denture -->
                 <div class="service-box">
-                    <img src="[attachment_0](attachment)" alt="Partial Denture" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=500&q=80" alt="E-Max" class="service-img">
                     <div class="service-details">
-                        <h3>أطقم الأسنان الجزئية (Partial Dentures)</h3>
-                        <p>تركيبات جزئية متينة ومصممة بدقة عالية تناسب كل حالة.</p>
+                        <h3>E-Max & Veneers</h3>
+                        <p>عدسات وتيجان عالية الجمال لابتسامة هوليود الجذابة.</p>
                     </div>
                 </div>
 
-                <!-- Clear aligner / Orthodontic -->
                 <div class="service-box">
-                    <img src="[attachment_4](attachment)" alt="Clear Aligner Orthodontics" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" alt="Implants" class="service-img">
                     <div class="service-details">
-                        <h3>التقويم الشفاف والتقويم (Clear Aligners / Orthodontics)</h3>
-                        <p>تخطيط وتصنيع قوالب التقويم الشفاف الرقمي بدقة متناهية.</p>
+                        <h3>تركيبات الزرعات (Implants)</h3>
+                        <p>جسور ودعامات مخصصة لجميع أنواع أنظمة الزراعة.</p>
                     </div>
                 </div>
 
-                <!-- Chrome cobalt -->
                 <div class="service-box">
-                    <img src="[attachment_1](attachment)" alt="Chrome Cobalt" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="3D Printing" class="service-img">
                     <div class="service-details">
-                        <h3>كروم كوبالت (Chrome Cobalt)</h3>
-                        <p>هياكل أطقم الكروم كوبالت المعدنية فائقة الخفة والدقة.</p>
+                        <h3>الطباعة ثلاثية الأبعاد (3D)</h3>
+                        <p>نماذج وتطبيقات تقويمية وسواقط بدقة متناهية.</p>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- الأجهزة الرقمية -->
+        <!-- قسم معرض الصور السريع -->
         <div class="section-card">
             <div class="section-header">
-                <i class="fa-solid fa-microchip"></i>
-                <h2>التجهيزات والتقنيات الرقمية</h2>
+                <i class="fa-solid fa-images"></i>
+                <h2>جودة التصنيع والتشطيب النهائي</h2>
             </div>
             <div class="gallery-grid">
-                <!-- CAD/CAM -->
                 <div class="gallery-item">
-                    <img src="[attachment_2](attachment)" alt="CAD CAM">
-                    <div class="gallery-caption">أنظمة التصميم والخراطة الرقمية CAD / CAM</div>
+                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=500&q=80" alt="Gallery Image 1">
                 </div>
-                <!-- 3D Printer in dentistry -->
                 <div class="gallery-item">
-                    <img src="[attachment_3](attachment)" alt="3D Printer in dentistry">
-                    <div class="gallery-caption">الطباعة ثلاثية الأبعاد للأسنان (3D Printing in Dentistry)</div>
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500&q=80" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=500&q=80" alt="Gallery Image 3">
                 </div>
             </div>
         </div>
 
-        <!-- نموذج إرسال حالة -->
+        <!-- قسم تجهيز حالة جديدة سريعاً للأطباء -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-file-medical"></i>
@@ -458,10 +465,8 @@
                         <select id="workType" class="form-control" required>
                             <option value="زيركون (Zirconia)">زيركون (Zirconia)</option>
                             <option value="إيماكس (E-Max)">إيماكس (E-Max)</option>
-                            <option value="Complete Denture">طقم كامل (Complete Denture)</option>
-                            <option value="Partial Denture">طقم جزئي (Partial Denture)</option>
-                            <option value="Chrome Cobalt">كروم كوبالت (Chrome Cobalt)</option>
-                            <option value="Clear Aligners">تقويم شفاف (Clear Aligners)</option>
+                            <option value="تركيبة على زرعة (Implant)">تركيبة على زرعة (Implant)</option>
+                            <option value="مؤقت (Temporary)">مؤقت (Temporary)</option>
                             <option value="أخرى">عمل آخر</option>
                         </select>
                     </div>
@@ -473,7 +478,7 @@
 
                 <div class="form-group">
                     <label>ملاحظات إضافية أو تفاصيل الأسنان</label>
-                    <textarea id="notes" class="form-control" rows="3" placeholder="اكتب أرقام الأسنان أو أي تفاصيل خاصة بالحالة..."></textarea>
+                    <textarea id="notes" class="form-control" rows="3" placeholder="اكتب أرقام الأسنان أو أي تفاصيل خاصة بالمطبوع..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-submit">
@@ -482,38 +487,42 @@
             </form>
         </div>
 
-        <!-- التواصل الاجتماعي -->
+        <!-- قسم منصات التواصل المباشر -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-comments"></i>
                 <h2>منصات التواصل الاجتماعي</h2>
             </div>
             <div class="btn-stack">
-                <a href="https://wa.me/9647700000000" class="btn-social btn-whatsapp" target="_blank">
+                <a href="https://wa.me/YOUR_PHONE_NUMBER" class="btn-social btn-whatsapp" target="_blank">
                     <span><i class="fa-brands fa-whatsapp fa-lg"></i> محادثة مباشرة عبر واتساب</span>
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
-                <a href="https://instagram.com/kut_dental_lab" class="btn-social btn-instagram" target="_blank">
+                <a href="YOUR_INSTAGRAM_LINK" class="btn-social btn-instagram" target="_blank">
                     <span><i class="fa-brands fa-instagram fa-lg"></i> متابعة معرض أعمالنا على إنستغرام</span>
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
-                <a href="https://facebook.com/kut_dental_lab" class="btn-social btn-facebook" target="_blank">
+                <a href="YOUR_FACEBOOK_LINK" class="btn-social btn-facebook" target="_blank">
                     <span><i class="fa-brands fa-facebook-f fa-lg"></i> صفحة الفيسبوك الرسمية</span>
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
             </div>
         </div>
 
+        <!-- الفوتر -->
         <footer>
-            © مختبر الكوت لصناعة الأسنان الرقمية - الكوت، محافظة واسط. جميع الحقوق محفوظة.
+            © مختبر الكوت لصناعة الأسنان. جميع الحقوق محفوظة.
         </footer>
 
     </div>
 
+    <!-- البرمجة التفاعلية تحويل النموذج للواتساب -->
     <script>
         function sendToWhatsapp(event) {
             event.preventDefault();
-            const phoneNumber = "9647700000000"; 
+            
+            const phoneNumber = "YOUR_PHONE_NUMBER"; 
+            
             const docName = document.getElementById('doctorName').value;
             const patName = document.getElementById('patientName').value;
             const work = document.getElementById('workType').value;
