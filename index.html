@@ -362,7 +362,7 @@
         <!-- شريط الإحصائيات -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-num">CAD / CAM</div>
+                <div class="stat-num">CAD/CAM</div>
                 <div class="stat-desc">تكنولوجيا التصميم الرقمي</div>
             </div>
             <div class="stat-card gold-border">
@@ -465,6 +465,8 @@
                         <select id="workType" class="form-control" required>
                             <option value="زيركون (Zirconia)">زيركون (Zirconia)</option>
                             <option value="إيماكس (E-Max)">إيماكس (E-Max)</option>
+                            <option value="طقم كامل (RCD)">طقم كامل (RCD)</option>
+                            <option value="طقم جزئي (RPD)">طقم جزئي (RPD)</option>
                             <option value="تركيبة على زرعة (Implant)">تركيبة على زرعة (Implant)</option>
                             <option value="مؤقت (Temporary)">مؤقت (Temporary)</option>
                             <option value="أخرى">عمل آخر</option>
@@ -491,19 +493,19 @@
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-comments"></i>
-                <h2>منصات التواصل الاجتماعي</h2>
+                <h2>مواقع التواصل الاجتماعي</h2>
             </div>
             <div class="btn-stack">
                 <a href="https://wa.me/+9647883114422" class="btn-social btn-whatsapp" target="_blank">
-                    <span><i class="fa-brands fa-whatsapp fa-lg"></i> محادثة مباشرة عبر واتساب</span>
+                    <span><i class="fa-brands fa-whatsapp fa-lg"></i>محادثة مباشرة عبر واتساب</span>
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
                 <a href="https://www.instagram.com/alkutlab?igsh=cmkyYnllejE1MW51" class="btn-social btn-instagram" target="_blank">
-                    <span><i class="fa-brands fa-instagram fa-lg"></i> متابعة أعمالنا على إنستغرام</span>
+                    <span><i class="fa-brands fa-instagram fa-lg"></i>متابعة أعمالنا على إنستغرام</span>
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
                 <a href="https://www.facebook.com/share/194TirnEtR/" class="btn-social btn-facebook" target="_blank">
-                    <span><i class="fa-brands fa-facebook-f fa-lg"></i> صفحة الفيسبوك الرسمية</span>
+                    <span><i class="fa-brands fa-facebook-f fa-lg"></i>صفحة الفيسبوك الرسمية</span>
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
             </div>
@@ -529,12 +531,12 @@
             const shade = document.getElementById('shade').value;
             const notes = document.getElementById('notes').value;
 
-            const message = `*طلب جديد من موقع مختبر الكوت*%0A%0A` +
+            const message = `*طلب جديد الى مختبر الكوت*%0A%0A` +
                             `*اسم الطبيب:* ${docName}%0A` +
                             `*اسم المريض/الحالة:* ${patName}%0A` +
                             `*نوع العمل:* ${work}%0A` +
                             `*درجة اللون:* ${shade}%0A` +
-                            `*ملاحظات:* ${notes}`;
+                            `*الملاحظات:* ${notes}`;
 
             window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
         }
