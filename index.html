@@ -47,7 +47,7 @@
             padding: 0 15px;
         }
 
-        /* 1. الهيدر والبانر الرئيسي */
+        /* 1. الهيدر */
         header {
             background: var(--white);
             border-bottom: 3px solid var(--gold);
@@ -61,9 +61,8 @@
 
         .hero-banner {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
-            filter: brightness(0.9);
         }
 
         .header-content {
@@ -176,7 +175,7 @@
             font-weight: 800;
         }
 
-        /* 4. كروت الخدمات مع الصور الجديدة المباشرة */
+        /* 4. كروت خدمات الأسنان */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -202,7 +201,7 @@
             width: 100%;
             height: 160px;
             object-fit: cover;
-            background-color: #f1f5f9;
+            background-color: var(--teal-light);
         }
 
         .service-details {
@@ -222,7 +221,7 @@
             font-weight: 600;
         }
 
-        /* 5. معرض الصور */
+        /* 5. معرض صور الأسنان المصغرة */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -234,7 +233,7 @@
             border-radius: 14px;
             overflow: hidden;
             height: 150px;
-            background-color: #f1f5f9;
+            background-color: var(--teal-light);
         }
 
         .gallery-item img {
@@ -347,9 +346,9 @@
 </head>
 <body>
 
-    <!-- البانر الرئيسي برابط متوافق وصريح -->
+    <!-- البانر الرئيسي: نموذج أسنان رقمي 3D -->
     <header>
-        <img src="https://img.freepik.com/free-photo/dental-technician-working-with-3d-scanner-lab_23-2149372134.jpg" alt="CAD CAM Dental Lab" class="hero-banner">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1000&q=80" alt="نموذج أسنان" class="hero-banner">
         
         <div class="header-content">
             <img src="logo.png" alt="مختبر الكوت لصناعة الأسنان" class="logo">
@@ -379,44 +378,44 @@
             </div>
         </div>
 
-        <!-- قسم الخدمات الرئيسية المصورة -->
+        <!-- قسم الخدمات الرئيسية - صور أسنان فقط -->
         <div class="section-card">
             <div class="section-header">
                 <i class="fa-solid fa-tooth"></i>
-                <h2>تخصصات وخدمات المختبر</h2>
+                <h2>تخصصات وخدمات الأسنان</h2>
             </div>
             <div class="services-grid">
                 
-                <!-- صورة طقم أسنان كامل وجزئي -->
+                <!-- صورة طقم أسنان / نموذج أسنان -->
                 <div class="service-box">
-                    <img src="https://img.freepik.com/free-photo/denture-model-teeth-clean-background_23-2149372120.jpg" alt="أطقم أسنان" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=500&q=80" alt="أطقم أسنان" class="service-img">
                     <div class="service-details">
                         <h3>أطقم أسنان (كاملة وجزئية)</h3>
                         <p>تصنيع الأطقم الاكريليكية والمطاطية (Flex) بإنهاء طبيعي مريح.</p>
                     </div>
                 </div>
 
-                <!-- صورة التقويم الشفاف والمعدني -->
+                <!-- صورة تقويم أسنان -->
                 <div class="service-box">
-                    <img src="https://img.freepik.com/free-photo/clear-aligner-teeth-remover-invisible-braces_23-2149372150.jpg" alt="تقويم شفاف ومعدني" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=500&q=80" alt="تقويم أسنان" class="service-img">
                     <div class="service-details">
                         <h3>التقويم (الشفاف والمعدني)</h3>
                         <p>قوالب التقويم الشفاف الرقمي (Aligners) وتجهيزات التقويم الثابت.</p>
                     </div>
                 </div>
 
-                <!-- صورة الزيركون والإيماكس -->
+                <!-- صورة تيجان زيركون وأسنان مصفوفة -->
                 <div class="service-box">
-                    <img src="https://img.freepik.com/free-photo/dental-prostheses-zirconia-crowns-laboratory_23-2149372140.jpg" alt="تيجان زيركون وإيماكس" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" alt="تيجان أسنان زيركون" class="service-img">
                     <div class="service-details">
                         <h3>تيجان Zirconia & E-Max</h3>
                         <p>تركيبات وعدسات تجميلية فائقة الدقة والشفافية لابتسامة هوليود.</p>
                     </div>
                 </div>
 
-                <!-- صورة تقنية CAD/CAM والطباعة -->
+                <!-- صورة أسنان ثلاثية الأبعاد -->
                 <div class="service-box">
-                    <img src="https://img.freepik.com/free-photo/close-up-3d-printer-printing-dental-models_23-2149372160.jpg" alt="أجهزة CAD CAM والطباعة" class="service-img">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="تقنيات الأسنان الرقمية" class="service-img">
                     <div class="service-details">
                         <h3>تقنيات CAD/CAM و 3D</h3>
                         <p>خراطة الزيركون والطباعة ثلاثية الأبعاد بدقة الميكرون الحيوية.</p>
@@ -426,24 +425,24 @@
             </div>
         </div>
 
-        <!-- معرض صور التجهيزات والمختبر -->
+        <!-- معرض صور نماذج الأسنان -->
         <div class="section-card">
             <div class="section-header">
-                <i class="fa-solid fa-microscope"></i>
-                <h2>بيئة العمل والتجهيزات داخل المختبر</h2>
+                <i class="fa-solid fa-teeth"></i>
+                <h2>نماذج وتركيبات الأسنان</h2>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://img.freepik.com/free-photo/dentist-working-with-cad-cam-computer-software_23-2149372130.jpg" alt="التصميم الرقمي">
-                    <div class="gallery-caption">التصميم الرقمي (CAD)</div>
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=500&q=80" alt="نموذج فك وأسنان">
+                    <div class="gallery-caption">نماذج الفك الرقمية</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://img.freepik.com/free-photo/technician-finishing-dental-crown-with-brush_23-2149372125.jpg" alt="التشطيب اليدوي">
-                    <div class="gallery-caption">التشطيب اليدوي الفني</div>
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=500&q=80" alt="تركيبات زيركون">
+                    <div class="gallery-caption">صف الأسنان والزيركون</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://img.freepik.com/free-photo/milling-machine-carving-zirconia-block_23-2149372138.jpg" alt="خراطة الزيركون">
-                    <div class="gallery-caption">أجهزة الخراطة (CAM)</div>
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" alt="ابتسامة وتصاميم أسنان">
+                    <div class="gallery-caption">ابتسامة هوليود (Veneers)</div>
                 </div>
             </div>
         </div>
